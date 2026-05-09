@@ -65,22 +65,22 @@ jobs:
     - name: Create distribution package
       run: |
         mkdir -p dist
-        copy build\${{ env.BUILD_TYPE }}\zasca-guard.exe dist\
-        if (-not (Test-Path "dist\zasca-guard.exe")) {
-          copy build\zasca-guard.exe dist\
+        copy build\${{ env.BUILD_TYPE }}\2c2a-guard.exe dist\
+        if (-not (Test-Path "dist\2c2a-guard.exe")) {
+          copy build\2c2a-guard.exe dist\
         }
         echo "# ZASCA Windows Service Guard v${{ steps.get_version.outputs.VERSION }}" > dist\README.txt
         echo "" >> dist\README.txt
         echo "Django Environment Guard Service for Windows" >> dist\README.txt
         echo "" >> dist\README.txt
         echo "Usage:" >> dist\README.txt
-        echo "  zasca-guard.exe [port]        - Start service on specified port (default: 8000)" >> dist\README.txt
+        echo "  2c2a-guard.exe [port]        - Start service on specified port (default: 8000)" >> dist\README.txt
         echo "                                 First run will auto-initialize environment" >> dist\README.txt
-        echo "  zasca-guard.exe init          - Manual initialize environment (install uv, sync dependencies)" >> dist\README.txt
-        echo "  zasca-guard.exe start [port]  - Start service on specified port" >> dist\README.txt
-        echo "  zasca-guard.exe stop          - Stop and uninstall service" >> dist\README.txt
-        echo "  zasca-guard.exe restart [port] - Restart service" >> dist\README.txt
-        echo "  zasca-guard.exe [any command] - Pass through to 'uv run python manage.py [command]'" >> dist\README.txt
+        echo "  2c2a-guard.exe init          - Manual initialize environment (install uv, sync dependencies)" >> dist\README.txt
+        echo "  2c2a-guard.exe start [port]  - Start service on specified port" >> dist\README.txt
+        echo "  2c2a-guard.exe stop          - Stop and uninstall service" >> dist\README.txt
+        echo "  2c2a-guard.exe restart [port] - Restart service" >> dist\README.txt
+        echo "  2c2a-guard.exe [any command] - Pass through to 'uv run python manage.py [command]'" >> dist\README.txt
         echo "" >> dist\README.txt
         echo "Features:" >> dist\README.txt
         echo "  - Auto-initialization on first run" >> dist\README.txt
@@ -92,21 +92,21 @@ jobs:
 
     - name: Create ZIP archive
       run: |
-        Compress-Archive -Path dist\* -DestinationPath zasca-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
+        Compress-Archive -Path dist\* -DestinationPath 2c2a-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
       shell: pwsh
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v6
       with:
-        name: zasca-guard-windows-x64-v${{ steps.get_version.outputs.VERSION }}
-        path: dist\zasca-guard.exe
+        name: 2c2a-guard-windows-x64-v${{ steps.get_version.outputs.VERSION }}
+        path: dist\2c2a-guard.exe
         retention-days: 90
 
     - name: Upload distribution package
       uses: actions/upload-artifact@v6
       with:
-        name: zasca-guard-dist-v${{ steps.get_version.outputs.VERSION }}
-        path: zasca-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
+        name: 2c2a-guard-dist-v${{ steps.get_version.outputs.VERSION }}
+        path: 2c2a-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
         retention-days: 90
 
   create-release:
@@ -127,13 +127,13 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v6
       with:
-        name: zasca-guard-dist-v${{ steps.get_version.outputs.VERSION }}
+        name: 2c2a-guard-dist-v${{ steps.get_version.outputs.VERSION }}
         path: ./dist
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
-        files: dist/zasca-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
+        files: dist/2c2a-guard-v${{ steps.get_version.outputs.VERSION }}-windows-x64.zip
         body: |
           ## ZASCA Windows Service Guard v${{ steps.get_version.outputs.VERSION }}
           
@@ -146,10 +146,10 @@ jobs:
           - 零信任安全保护（拒绝普通用户终止）
           
           ### 使用方法
-          1. 以管理员身份运行 `zasca-guard.exe` 即可（首次运行会自动初始化）
-          2. 或手动运行 `zasca-guard.exe init` 初始化环境
-          3. 运行 `zasca-guard.exe [port]` 启动服务（默认端口 8000）
-          4. 运行 `zasca-guard.exe stop` 停止服务
+          1. 以管理员身份运行 `2c2a-guard.exe` 即可（首次运行会自动初始化）
+          2. 或手动运行 `2c2a-guard.exe init` 初始化环境
+          3. 运行 `2c2a-guard.exe [port]` 启动服务（默认端口 8000）
+          4. 运行 `2c2a-guard.exe stop` 停止服务
           
           ### 系统要求
           - Windows 10/11 或 Windows Server 2016+

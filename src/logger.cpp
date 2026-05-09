@@ -8,7 +8,7 @@ static std::string g_LogPath;
 
 void LogInit() {
     std::string exeDir = GetExeDirectory();
-    g_LogPath = exeDir + "\\zasca-guard.log";
+    g_LogPath = exeDir + "\\2c2a-guard.log";
 
     std::ofstream logFile(g_LogPath, std::ios::app);
     if (logFile.is_open()) {

@@ -93,7 +93,7 @@ GitHub Actions 自动触发
     ↓
 在 Windows 环境编译
     ↓
-生成 zasca-guard.exe
+生成 2c2a-guard.exe
     ↓
 创建 ZIP 分发包
     ↓
@@ -135,7 +135,7 @@ git push origin v1.0.0
 
 # 注意：推送 Tag 后，GitHub Actions 会自动：
 # - 在 Windows 环境编译代码
-# - 生成 zasca-guard.exe
+# - 生成 2c2a-guard.exe
 # - 创建 GitHub Release
 # - 上传可执行文件
 ```
@@ -284,8 +284,8 @@ git push origin HEAD
 
 ### 构建产物
 构建完成后会生成：
-- `zasca-guard.exe`：Windows 可执行文件
-- `zasca-guard-vX.Y.Z-windows-x64.zip`：分发包（包含可执行文件和说明文档）
+- `2c2a-guard.exe`：Windows 可执行文件
+- `2c2a-guard-vX.Y.Z-windows-x64.zip`：分发包（包含可执行文件和说明文档）
 
 ### 构建环境
 - **操作系统**：windows-latest

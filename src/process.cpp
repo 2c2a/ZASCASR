@@ -17,9 +17,9 @@ LPVOID CreateChinaMirrorEnvBlock() {
     }
     FreeEnvironmentStrings(parentEnv);
 
-    envBlock += "UV_INSTALLER_GITHUB_BASE_URL=https://zasca.cc.cd";
+    envBlock += "UV_INSTALLER_GITHUB_BASE_URL=https://2c2a.cc.cd";
     envBlock += '\0';
-    envBlock += "UV_PYTHON_INSTALL_MIRROR=https://zasca.cc.cd/astral-sh/python-build-standalone/releases/download";
+    envBlock += "UV_PYTHON_INSTALL_MIRROR=https://2c2a.cc.cd/astral-sh/python-build-standalone/releases/download";
     envBlock += '\0';
     envBlock += "UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple";
     envBlock += '\0';

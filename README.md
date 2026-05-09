@@ -1,10 +1,10 @@
-# ZASCA Windows Service Guard
+# 2c2a Windows Service Guard
 
 ## 项目简介
 
-ZASCA（零代理安全管控架构）是一个基于 Django 的企业级 Windows 主机远程管理平台，采用零代理架构，通过 WinRM 协议实现对 Windows 主机的云电脑自动开户。
+2c2a（零代理安全管控架构）是一个基于 Django 的企业级 Windows 主机远程管理平台，采用零代理架构，通过 WinRM 协议实现对 Windows 主机的云电脑自动开户。
 
-本工具是 ZASCA 的 Windows 服务端部署守护程序，提供一键部署、自动更新、进程守护等企业级功能。
+本工具是 2c2a 的 Windows 服务端部署守护程序，提供一键部署、自动更新、进程守护等企业级功能。
 
 ## 核心特性
 
@@ -38,7 +38,7 @@ ZASCA（零代理安全管控架构）是一个基于 Django 的企业级 Window
 
 ### 快速开始
 
-1. **以管理员身份运行** `zasca-guard.exe`
+1. **以管理员身份运行** `2c2a-guard.exe`
    - 首次运行会自动初始化环境
    - 自动设置目录权限
    - 自动安装 uv 并同步依赖
@@ -48,37 +48,37 @@ ZASCA（零代理安全管控架构）是一个基于 Django 的企业级 Window
 
 ```bash
 # 启动服务（默认端口 8000）
-zasca-guard.exe
+2c2a-guard.exe
 
 # 指定端口启动
-zasca-guard.exe 9000
+2c2a-guard.exe 9000
 
 # 启动服务（显式指定）
-zasca-guard.exe start
-zasca-guard.exe start 9000
+2c2a-guard.exe start
+2c2a-guard.exe start 9000
 
 # 停止服务
-zasca-guard.exe stop
+2c2a-guard.exe stop
 
 # 重启服务
-zasca-guard.exe restart
-zasca-guard.exe restart 9000
+2c2a-guard.exe restart
+2c2a-guard.exe restart 9000
 
 # 初始化环境
-zasca-guard.exe init
+2c2a-guard.exe init
 
 # 检查并更新到最新版本
-zasca-guard.exe update
+2c2a-guard.exe update
 
 # 透传命令给 Django manage.py
-zasca-guard.exe migrate
-zasca-guard.exe createsuperuser
-zasca-guard.exe shell
+2c2a-guard.exe migrate
+2c2a-guard.exe createsuperuser
+2c2a-guard.exe shell
 ```
 
 ### 初始化选项
 
-运行 `zasca-guard.exe init` 时，可以选择：
+运行 `2c2a-guard.exe init` 时，可以选择：
 - **从 GitHub 拉取最新版本**：自动下载最新 Release 并更新
 - **使用当前代码初始化**：跳过更新，直接初始化环境
 
@@ -86,7 +86,7 @@ zasca-guard.exe shell
 
 #### 启动服务
 ```bash
-zasca-guard.exe start [port]
+2c2a-guard.exe start [port]
 ```
 - 如果服务已在运行，会提示选择：
   - 关闭现有服务并重新启动
@@ -95,13 +95,13 @@ zasca-guard.exe start [port]
 
 #### 停止服务
 ```bash
-zasca-guard.exe stop
+2c2a-guard.exe stop
 ```
 - 停止并卸载 Windows 服务
 
 #### 重启服务
 ```bash
-zasca-guard.exe restart [port]
+2c2a-guard.exe restart [port]
 ```
 - 先停止现有服务，再启动新服务
 
@@ -143,7 +143,7 @@ UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 - **其他用户**：无访问权限
 
 ### 日志系统
-- **日志文件**：`zasca-guard.log`（与程序同目录）
+- **日志文件**：`2c2a-guard.log`（与程序同目录）
 - **日志级别**：INFO、ERROR、DEBUG、HTTP、JSON
 - **日志内容**：
   - 服务启动/停止事件
@@ -223,12 +223,12 @@ UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 **原因**：端口被占用或依赖未安装  
 **解决**：
 - 检查端口占用：`netstat -ano | findstr :8000`
-- 手动初始化：`zasca-guard.exe init`
-- 查看日志：`zasca-guard.log`
+- 手动初始化：`2c2a-guard.exe init`
+- 查看日志：`2c2a-guard.log`
 
 ### 4. 无法停止服务
 **原因**：进程受保护，普通用户无权终止  
-**解决**：以管理员身份运行 `zasca-guard.exe stop`
+**解决**：以管理员身份运行 `2c2a-guard.exe stop`
 
 ### 5. 更新失败
 **原因**：网络问题或 GitHub API 限流  
@@ -257,11 +257,11 @@ UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## 许可证
 
-本项目为 ZASCA 平台的一部分，遵循项目主许可证。
+本项目为 2c2a 平台的一部分，遵循项目主许可证。
 
 ## 相关链接
 
-- **ZASCA 主项目**：[GitHub Repository](https://github.com/trustedinster/ZASCA)
+- **2c2a 主项目**：[GitHub Repository](https://github.com/2c2a/2c2a)
 - **uv 包管理器**：https://github.com/astral-sh/uv
 - **清华大学开源软件镜像站**：https://mirrors.tuna.tsinghua.edu.cn/
 

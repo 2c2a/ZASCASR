@@ -37,8 +37,8 @@ param (
 
 $app_name = 'uv'
 $app_version = '0.11.6'
-$GITHUB_MIRROR = "https://zasca.cc.cd"
-$ASTRAL_RELEASES_MIRROR = "https://zasca.cc.cd"
+$GITHUB_MIRROR = "https://2c2a.cc.cd"
+$ASTRAL_RELEASES_MIRROR = "https://2c2a.cc.cd"
 
 if ($env:UV_DOWNLOAD_URL) {
   $ArtifactDownloadUrls = @($env:UV_DOWNLOAD_URL)

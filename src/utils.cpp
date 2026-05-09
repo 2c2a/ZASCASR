@@ -22,7 +22,7 @@ std::string GetTempFilePath() {
     char tempPath[MAX_PATH];
     GetTempPathA(MAX_PATH, tempPath);
     char tempFile[MAX_PATH];
-    GetTempFileNameA(tempPath, "ZASCA", 0, tempFile);
+    GetTempFileNameA(tempPath, "2c2a", 0, tempFile);
     return std::string(tempFile);
 }
 

@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
-project(zasca-guard VERSION 1.0.0 LANGUAGES CXX RC)
+project(2c2a-guard VERSION 1.0.0 LANGUAGES CXX RC)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(zasca-guard
+add_executable(2c2a-guard
     src/main.cpp
     src/logger.cpp
     src/utils.cpp
@@ -19,11 +19,11 @@ add_executable(zasca-guard
     src/resource.rc
 )
 
-target_include_directories(zasca-guard PRIVATE
+target_include_directories(2c2a-guard PRIVATE
     ${CMAKE_SOURCE_DIR}/src
 )
 
-target_link_libraries(zasca-guard PRIVATE
+target_link_libraries(2c2a-guard PRIVATE
     advapi32
     user32
     shell32
@@ -33,10 +33,10 @@ target_link_libraries(zasca-guard PRIVATE
 )
 
 if(MSVC)
-    target_compile_options(zasca-guard PRIVATE /EHsc /W3)
-    target_compile_definitions(zasca-guard PRIVATE
+    target_compile_options(2c2a-guard PRIVATE /EHsc /W3)
+    target_compile_definitions(2c2a-guard PRIVATE
         _CRT_SECURE_NO_WARNINGS
         $<$<CONFIG:Release>:NDEBUG>
     )
-    set_target_properties(zasca-guard PROPERTIES LINK_FLAGS "/MANIFEST:NO")
+    set_target_properties(2c2a-guard PROPERTIES LINK_FLAGS "/MANIFEST:NO")
 endif()

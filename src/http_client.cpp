@@ -11,7 +11,7 @@ std::string HttpGet(const std::string& host, const std::string& path) {
     LogDebug("Host: " + host + ", Path: " + path);
 
     std::string response;
-    HINTERNET hSession = WinHttpOpen(L"ZASCA-Updater/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, NULL, NULL, 0);
+    HINTERNET hSession = WinHttpOpen(L"2c2a-Updater/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, NULL, NULL, 0);
     if (!hSession) {
         LogError("Failed to create WinHTTP session, error: " + std::to_string(GetLastError()));
         return response;
@@ -114,7 +114,7 @@ bool DownloadFile(const std::string& url, const std::string& localPath) {
     LogInfo("Host: " + host);
     LogInfo("Path: " + path);
 
-    HINTERNET hSession = WinHttpOpen(L"ZASCA-Updater/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, NULL, NULL, 0);
+    HINTERNET hSession = WinHttpOpen(L"2c2a-Updater/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, NULL, NULL, 0);
     if (!hSession) {
         LogError("WinHttpOpen failed: " + std::to_string(GetLastError()));
         return false;

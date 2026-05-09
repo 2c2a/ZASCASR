@@ -34,7 +34,7 @@ void HandlePassthrough(const std::vector<std::string>& args) {
 
 int main(int argc, char* argv[]) {
     LogInit();
-    LogInfo("=== ZASCA Guard started ===");
+    LogInfo("=== 2c2a Guard started ===");
     LogDebug("Arguments count: " + std::to_string(argc));
     for (int i = 0; i < argc; i++) {
         LogDebug("  argv[" + std::to_string(i) + "]: " + std::string(argv[i]));
@@ -69,6 +69,6 @@ int main(int argc, char* argv[]) {
     else if (action == "update") HandleUpdate();
     else if (action == "passthrough") HandlePassthrough(passthrough_args);
 
-    LogInfo("=== ZASCA Guard exited ===");
+    LogInfo("=== 2c2a Guard exited ===");
     return 0;
 }
